@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Lista de tarefas</h1>
+      </header>
+      <form>
+        <input
+          type="text"
+          required
+          id="endereco-terefa-nova"
+          placeholder="Nome da tarefa"
+        />
+        <button type="submit">Incluir tarefa</button>
+        <button id="botao-zerar" onclick="location.reload()">
+          zerar tarefas
+        </button>
+      </form>
+      <ul>
+        <li>
+          <div class="texto-tarefa">
+            <a>---</a>
+          </div>
+        </li>
+        <li>
+          <div class="texto-tarefa">
+            <a>---</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
