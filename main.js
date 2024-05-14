@@ -1,34 +1,23 @@
-let linhas = " ";
-
 $(document).ready(function () {
   $("form").on("submit", function (e) {
     e.preventDefault();
+
     const enderecoTarefaNova = $("#endereco-terefa-nova").val();
 
-    let linha = "<tr>";
-    linha += `<a>${enderecoTarefaNova.value}</a>`;
-    linha += "</tr>";
+    const novaTarefa = $("<li></li>").appendTo("ul");
 
-    const listaTarefa = document.querySelector("a");
-    listaTarefa.innerHTML = linhas;
+    $("<div class='texto-tarefa'></div>")
+      .append(
+        `<a onclick='concluirTeste()' id="teste">${enderecoTarefaNova}</a>`
+      )
 
-    const novaTarefa = $("<li></li>");
-    $(`
-      <div class="texto-tarefa">
-      <
-      </div>
-    `).appendTo(novaTarefa);
+      .appendTo(novaTarefa);
+
+    function concluirTeste() {
+      let adicionar = document.getElementById("teste");
+      adicionar.classList.add("seletor");
+    }
+
+    $("#endereco-terefa-nova").val("");
   });
 });
-
-/*let linha = "<tr>";
-    linha += `<a>${enderecoTarefaNova.value}</a>`;
-    linha += "</tr>";
-
-    const listaTarefa = document.querySelector("a");
-    listaTarefa.innerHTML = linhas;*/
-
-/*function adicionaLinha() {
-  const inputTarefaNova = document.getElementById("endereco-terefa-nova");
-  alert(`atividade ${inputTarefaNova.value}`);
-}*/
