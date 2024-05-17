@@ -2,28 +2,29 @@ $(document).ready(function () {
   $("form").on("submit", function (e) {
     e.preventDefault();
 
+    let array = [];
+
     const enderecoTarefaNova = $("#inputAdiciona").val();
 
     const novaTarefa = $("<li></li>").appendTo("ul");
 
-    let arrayLista = [];
-
-    $("<li class='texto-tarefa'></li>")
-      .append(`<a id="teste">${enderecoTarefaNova}</a>`)
+    $("<div class='texto-tarefa'></div>")
+      .append(`<a id='teste'>${enderecoTarefaNova}</a>`)
       .appendTo(novaTarefa);
 
     $("#teste").click(function () {
-      $(this).attr("class", "seletor");
+      $("#teste").attr("class", "seletor");
     });
 
     $("#teste").dblclick(function () {
-      $(this).attr("class", "seletor1");
+      $("#teste").attr("class", "seletor1");
     });
+
+    function valorInput() {
+      array.push(enderecoTarefaNova);
+      console.log(valorInput());
+    }
+
+    $("#inputAdiciona").val("");
   });
-
-  //  function addTarefa() {
-  //  arrayLista.push(input);
-  // }
-
-  $("#inputAdiciona").val(" ");
 });
